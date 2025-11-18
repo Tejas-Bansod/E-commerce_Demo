@@ -1,0 +1,25 @@
+.logo-container {
+  @apply relative flex items-center;
+}
+
+.logo-image {
+  @apply h-16 md:h-20 w-auto object-contain;
+  max-height: 80px;
+  mix-blend-mode: multiply;
+  filter: brightness(110%);
+  background: transparent;
+}
+
+/* Remove white background and ensure transparency */
+.logo-image::before {
+  content: '';
+  @apply absolute inset-0;
+  background: transparent;
+  mix-blend-mode: multiply;
+}
+
+/* Ensure the logo container doesn't show background */
+.logo-wrapper {
+  @apply relative overflow-hidden;
+  background: transparent;
+} 
