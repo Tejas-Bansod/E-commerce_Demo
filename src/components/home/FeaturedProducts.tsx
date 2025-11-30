@@ -29,8 +29,8 @@ const FeaturedProducts: React.FC = () => {
 
   return (
     <section className="py-16 bg-white relative">
-      <div className="container-lg relative">
-        <div className="text-center mb-8">
+      <div className="w-full px-4 md:px-16 relative group">
+        <div className="max-w-4xl mx-auto text-center mb-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-2">Featured Products</h2>
           <p className="text-gray-600">
             Our major products: Spirulina, Moringa, and Wheatgrass- carefully selected for quality and potency.
@@ -40,22 +40,23 @@ const FeaturedProducts: React.FC = () => {
         {/* Left arrow */}
         <button
           onClick={() => scroll('left')}
-          className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow hover:bg-white"
+          className="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow hover:bg-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+          aria-label="Scroll left"
         >
           <ChevronLeft size={20} />
         </button>
 
-        {/* Product row - arrows only, no mouse scroll */}
+        {/* Product row */}
         <div
           ref={scrollRef}
-          className="flex space-x-6 pb-4 scroll-smooth max-w-full"
+          className="flex space-x-6 pb-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide"
           style={{
-            overflow: 'hidden', // ❌ No overflow-x-auto
-            paddingRight: '1rem',
+            scrollbarWidth: 'none',
+            msOverflowStyle: 'none',
           }}
         >
           {featuredProducts.map((product, index) => (
-            <div key={index} className="flex-none w-64 shrink-0">
+            <div key={index} className="flex-none w-64 shrink-0 snap-center">
               <ProductCard product={product} />
             </div>
           ))}
@@ -64,7 +65,8 @@ const FeaturedProducts: React.FC = () => {
         {/* Right arrow */}
         <button
           onClick={() => scroll('right')}
-          className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow hover:bg-white"
+          className="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-white/80 p-2 rounded-full shadow hover:bg-white opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300"
+          aria-label="Scroll right"
         >
           <ChevronRight size={20} />
         </button>

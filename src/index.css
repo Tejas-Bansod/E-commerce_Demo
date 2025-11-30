@@ -7,34 +7,38 @@
     scroll-behavior: smooth;
   }
 
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
   }
-  
+
   body {
     @apply font-sans text-neutral-800 bg-neutral-50 antialiased;
   }
-  
-  h1, h2, h3, h4 {
+
+  h1,
+  h2,
+  h3,
+  h4 {
     @apply font-serif font-semibold tracking-tight;
   }
-  
+
   h1 {
     @apply text-4xl md:text-5xl lg:text-6xl leading-[1.2] mb-6;
   }
-  
+
   h2 {
     @apply text-3xl md:text-4xl leading-[1.2] mb-4;
   }
-  
+
   h3 {
     @apply text-2xl md:text-3xl leading-[1.2] mb-3;
   }
-  
+
   h4 {
     @apply text-xl md:text-2xl leading-[1.2] mb-2;
   }
-  
+
   p {
     @apply leading-relaxed mb-4;
   }
@@ -44,23 +48,23 @@
   .container {
     @apply px-4 md:px-6 lg:px-8 mx-auto max-w-7xl;
   }
-  
+
   .btn {
     @apply inline-flex items-center justify-center px-6 py-3 font-medium rounded-lg text-sm transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 transform hover:scale-[1.02] active:scale-[0.98] hover:shadow-md;
   }
-  
+
   .btn-primary {
     @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500 shadow-sm hover:shadow-md;
   }
-  
+
   .btn-secondary {
     @apply bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-500 shadow-sm hover:shadow-md;
   }
-  
+
   .btn-accent {
     @apply bg-accent-600 text-white hover:bg-accent-700 focus:ring-accent-500 shadow-sm hover:shadow-md;
   }
-  
+
   .btn-outline {
     @apply border-2 border-neutral-300 bg-white text-neutral-800 hover:bg-neutral-50 focus:ring-neutral-500 hover:border-neutral-400;
   }
@@ -68,11 +72,11 @@
   .tag {
     @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium transition-all duration-200 hover:scale-105;
   }
-  
+
   .tag-green {
     @apply bg-primary-100 text-primary-800 hover:bg-primary-200;
   }
-  
+
   .tag-blue {
     @apply bg-secondary-100 text-secondary-800 hover:bg-secondary-200;
   }
@@ -80,11 +84,11 @@
   .product-card {
     @apply relative bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1;
   }
-  
+
   .product-card:hover .product-image {
     @apply scale-105;
   }
-  
+
   .product-image {
     @apply w-full h-64 object-cover object-center transition-transform duration-500;
   }
@@ -99,7 +103,7 @@
   .swiper:hover .swiper-button-next {
     @apply opacity-100;
   }
-  
+
 
   /* New responsive grid layouts */
   .grid-auto-fit {
@@ -163,5 +167,18 @@
   /* Animated border */
   .animated-border {
     @apply relative before:absolute before:inset-0 before:rounded-lg before:p-[2px] before:bg-gradient-to-r before:from-primary-600 before:to-secondary-600 before:opacity-0 hover:before:opacity-100 before:transition-opacity before:duration-300;
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
   }
 }
